@@ -1,0 +1,380 @@
+<script>
+  const letters: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  let interval: number | undefined = undefined;
+
+  const h3: HTMLHeadingElement | null = document.querySelector("h3");
+
+  if (h3 !== null) {
+    h3.onmouseover = (event: MouseEvent): void => {
+      let iteration: number = 0;
+
+      clearInterval(interval);
+
+      interval = setInterval(() => {
+        if (event.target !== null) {
+          (event.target as HTMLElement).innerText = (
+            event.target as HTMLElement
+          ).innerText
+            .split("")
+            .map((letter: string, index: number) => {
+              if (index < iteration) {
+                return (event.target as HTMLElement).dataset.value![index];
+              }
+
+              return letters[Math.floor(Math.random() * 26)];
+            })
+            .join("");
+
+          if (
+            iteration >= (event.target as HTMLElement).dataset.value!.length
+          ) {
+            clearInterval(interval);
+          }
+
+          iteration += 1 / 3;
+        }
+      }, 30);
+    };
+  }
+</script>
+
+<main
+  class:list={["hero-container", "h-full flex justify-center items-center"]}
+>
+  <div class:list={["hero", "container w-full h-[70vh] flex text-white"]}>
+    <div class="w-[100%] flex items-center text-black">
+      <div class="w-10/12 h-full flex flex-col justify-center gap-8">
+        <div class="gap-0">
+          <div class="text-9xl">I'M</div>
+          <h3
+            class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl whitespace-nowrap font-medium text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
+            data-value="ADITYA MAURYA"
+          >
+            ADITYA MAURYA
+          </h3>
+        </div>
+        <div class="text-xl">
+          As a full stack developer, I'm equipped with the expertise to build
+          robust web applications from the ground up. But my true passion lies
+          in front-end development, where I specialize in creating visually
+          stunning and user-friendly interfaces that captivate users and drive
+          measurable results for businesses.
+        </div>
+        <div class="flex flex-row w-full">
+          <div class="mx-4 ml-0">
+            <button class="button-1">
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg
+                    height="24"
+                    width="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M11.5,20h-6a1,1,0,0,1-1-1V5a1,1,0,0,1,1-1h5V7a3,3,0,0,0,3,3h3v5a1,1,0,0,0,2,0V9s0,0,0-.06a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.29.29,0,0,0-.1,0A1.1,1.1,0,0,0,11.56,2H5.5a3,3,0,0,0-3,3V19a3,3,0,0,0,3,3h6a1,1,0,0,0,0-2Zm1-14.59L15.09,8H13.5a1,1,0,0,1-1-1ZM7.5,14h6a1,1,0,0,0,0-2h-6a1,1,0,0,0,0,2Zm4,2h-4a1,1,0,0,0,0,2h4a1,1,0,0,0,0-2Zm-4-6h1a1,1,0,0,0,0-2h-1a1,1,0,0,0,0,2Zm13.71,6.29a1,1,0,0,0-1.42,0l-3.29,3.3-1.29-1.3a1,1,0,0,0-1.42,1.42l2,2a1,1,0,0,0,1.42,0l4-4A1,1,0,0,0,21.21,16.29Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+              </div>
+              <span>Resume</span>
+            </button>
+          </div>
+          <div>
+            <button class="button-2">
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg
+                    height="24"
+                    width="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+              </div>
+              <span>More</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-[30%] flex justify-center items-center">
+      <a href="#" target="_noreferrer">
+        <div class="card">
+          <div class="wrapper">
+            <img src="/assets/me/me-here.webp" class="cover-image" />
+          </div>
+          <div
+            class:list={[
+              "title",
+              "text-white text-2xl font-semibold text-center",
+            ]}
+          >
+            <div>Aditya Maurya</div>
+            <div>Full Stack Developer</div>
+          </div>
+          <img src="/assets/me/me.webp" class="character" />
+        </div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<style>
+  /* Text Hover Styles */
+  /* h3 {
+    font-size: clamp(3rem, 10vw, 8rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  } */
+
+  /* Card Hover Styles */
+  :root {
+    --card-height: 300px;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+  .card {
+    position: relative;
+    width: 306px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 2px;
+    perspective: 2500px;
+    border-radius: 10px;
+  }
+  .wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .coverimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .card:hover .wrapper {
+    transform: perspective(400px) translateY(-6%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 2.75);
+    filter: brightness(0.6);
+  }
+
+  .wrapper::before,
+  .wrapper::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 90px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .wrapper::before {
+    top: 0;
+    height: 80%;
+    background-image: linear-gradient(
+      to top,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+  }
+  .wrapper::after {
+    bottom: 0;
+    opacity: 0;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+  }
+
+  .card:hover .wrapper::before,
+  .wrapper::after {
+    opacity: 1;
+  }
+
+  .card:hover .wrapper::after {
+    height: 120px;
+  }
+  .title {
+    width: 100%;
+    transition: transform 0.5s;
+    padding-bottom: 14px;
+  }
+  .card:hover .title {
+    transform: translate3d(0%, -80px, 800px);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 5);
+    font-size: 1.7rem;
+  }
+  .character {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+  }
+  .card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -40%, 100px) scale(1.8);
+  }
+
+  /* Button Hover Styles */
+  .button-1 {
+    font-family: inherit;
+    font-size: 20px;
+    background: #ff7e33;
+    border: 2px solid #ff7e33;
+    color: white;
+    padding: 0.7em 2em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  .button-1 span {
+    display: block;
+    margin-left: 1.3em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .button-1 svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .button-1:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+
+  .button-1:hover svg {
+    transform: translateX(2.8em) rotate(360deg) scale(1.1);
+  }
+
+  .button-1:hover span {
+    transform: translateX(8em);
+  }
+
+  .button-1:active {
+    transform: scale(0.95);
+  }
+
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
+
+  .button-2 {
+    font-family: inherit;
+    font-size: 20px;
+    color: black;
+    padding: 0.7em 2em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  .button-2 span {
+    display: block;
+    margin-left: 1.3em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .button-2 svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .button-2:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+
+  .button-2:hover svg {
+    transform: translateX(2.2em) rotate(45deg) scale(1.1);
+  }
+
+  .button-2:hover span {
+    transform: translateX(8em);
+  }
+
+  .button-2:active {
+    transform: scale(0.95);
+  }
+</style>
+
+<!-- script for keeping a space between the hover effect text -->
+<!-- const letters: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+let interval: number | undefined = undefined;
+
+const h1: HTMLHeadingElement | null = document.querySelector("h1");
+
+if (h1 !== null) {
+  h1.onmouseover = (event: MouseEvent): void => {
+    let iteration: number = 0;
+
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+      if (event.target !== null) {
+        (event.target as HTMLElement).innerText = (
+          event.target as HTMLElement
+        ).innerText
+          .split("")
+          .map((letter: string, index: number) => {
+            if (index < iteration) {
+              return (event.target as HTMLElement).dataset.value![index];
+            }
+
+            if (letter === " ") {
+              return " ";
+            }
+
+            return letters[Math.floor(Math.random() * 26)];
+          })
+          .join("");
+
+        if (
+          iteration >= (event.target as HTMLElement).dataset.value!.length
+        ) {
+          clearInterval(interval);
+        }
+
+        iteration += 1 / 3;
+      }
+    }, 50);
+  };
+} -->
