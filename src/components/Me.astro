@@ -1,44 +1,3 @@
-<script>
-  const letters: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-  let interval: number | undefined = undefined;
-
-  const h3: HTMLHeadingElement | null = document.querySelector("h3");
-
-  if (h3 !== null) {
-    h3.onmouseover = (event: MouseEvent): void => {
-      let iteration: number = 0;
-
-      clearInterval(interval);
-
-      interval = setInterval(() => {
-        if (event.target !== null) {
-          (event.target as HTMLElement).innerText = (
-            event.target as HTMLElement
-          ).innerText
-            .split("")
-            .map((letter: string, index: number) => {
-              if (index < iteration) {
-                return (event.target as HTMLElement).dataset.value![index];
-              }
-
-              return letters[Math.floor(Math.random() * 26)];
-            })
-            .join("");
-
-          if (
-            iteration >= (event.target as HTMLElement).dataset.value!.length
-          ) {
-            clearInterval(interval);
-          }
-
-          iteration += 1 / 3;
-        }
-      }, 30);
-    };
-  }
-</script>
-
 <main
   class:list={["hero-container", "h-full flex justify-center items-center"]}
 >
@@ -126,6 +85,47 @@
     </div>
   </div>
 </main>
+
+<script>
+  const letters: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  let interval: number | undefined = undefined;
+
+  const h3: HTMLHeadingElement | null = document.querySelector("h3");
+
+  if (h3 !== null) {
+    h3.onmouseover = (event: MouseEvent): void => {
+      let iteration: number = 0;
+
+      clearInterval(interval);
+
+      interval = setInterval(() => {
+        if (event.target !== null) {
+          (event.target as HTMLElement).innerText = (
+            event.target as HTMLElement
+          ).innerText
+            .split("")
+            .map((letter: string, index: number) => {
+              if (index < iteration) {
+                return (event.target as HTMLElement).dataset.value![index];
+              }
+
+              return letters[Math.floor(Math.random() * 26)];
+            })
+            .join("");
+
+          if (
+            iteration >= (event.target as HTMLElement).dataset.value!.length
+          ) {
+            clearInterval(interval);
+          }
+
+          iteration += 1 / 3;
+        }
+      }, 30);
+    };
+  }
+</script>
 
 <style>
   /* Text Hover Styles */

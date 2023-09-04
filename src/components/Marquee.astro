@@ -4,8 +4,8 @@ import { Icon } from "astro-icon";
 
 <div class="marquee">
   <ul class="marquee-content">
-    <li><Icon name="logos:nextjs" color="white" /></li>
     <li><Icon name="logos:typescript-icon" color="white" /></li>
+    <li><Icon name="logos:nextjs-icon" color="white" /></li>
     <li><Icon name="logos:tailwindcss-icon" color="white" /></li>
     <li><Icon name="logos:postgresql" color="white" /></li>
     <li><Icon name="logos:nodejs-icon" /></li>
@@ -13,16 +13,17 @@ import { Icon } from "astro-icon";
     <li><Icon name="logos:prisma" /></li>
     <li><Icon name="logos:docker-icon" /></li>
     <li><Icon name="logos:redis" /></li>
-    <li><Icon name="logos:supabase-icon" /></li>
+    <li><Icon name="simple-icons:supabase" color="#3ECF8E" /></li>
     <li><Icon name="logos:firebase" /></li>
     <li><Icon name="logos:go" /></li>
     <li><Icon name="logos:graphql" /></li>
     <li><Icon name="logos:javascript" /></li>
     <li><Icon name="logos:archlinux" /></li>
-    <li><Icon name="logos:mongodb-icon" /></li>
+    <li><Icon name="vscode-icons:file-type-mongo" /></li>
     <li><Icon name="logos:python" /></li>
   </ul>
 </div>
+
 <script>
   const root = document.documentElement;
   const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
@@ -38,21 +39,11 @@ import { Icon } from "astro-icon";
 </script>
 
 <style>
-  .body {
-    font-family: "Montserrat", sans-serif;
-    background-color: #eee;
-    color: #111;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   :root {
-    --marquee-width: 80vw;
-    --marquee-height: 20vh;
+    --marquee-width: 100%;
+    --marquee-height: 25vh;
     /* --marquee-elements: 12; */ /* defined with JavaScript */
-    --marquee-elements-displayed: 5;
+    --marquee-elements-displayed: 12;
     --marquee-element-width: calc(
       var(--marquee-width) / var(--marquee-elements-displayed)
     );
@@ -60,9 +51,9 @@ import { Icon } from "astro-icon";
   }
 
   .marquee {
-    width: var(--marquee-width);
+    width: 100%;
     height: var(--marquee-height);
-    background-color: #111;
+    background-color: #171424;
     color: #eee;
     overflow: hidden;
     position: relative;

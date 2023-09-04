@@ -1,0 +1,50 @@
+---
+import Card from "../../components/Card.astro";
+---
+
+<div
+  class="h-screen w-full flex flex-col bg-[#171424] justify-center items-center relative overflow-hidden"
+>
+  <div class="absolute top-0 left-0 w-1/2 h-1/2 bg-[#2A233E]"></div>
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-[#your-second-color]">
+  </div>
+  <div
+    class="absolute top-0 left-0 w-full h-1/2 bg-[#2A233E] transform -skew-y-6"
+  >
+  </div>
+  <div
+    class="text-8xl text-white font-medium h-[38%] flex justify-center items-center relative z-10"
+  >
+    I Excel at...
+  </div>
+  <div class="h-[62%] flex justify-center items-start gap-6 relative z-10">
+    <Card
+      color="#FF7E33"
+      image="education"
+      title="Web Dev"
+      description="I am a web dev, wassup"
+      tags={["frontend", "backend"]}
+    />
+    <Card
+      color="#1E192D"
+      image="education"
+      title="Web Dev"
+      description="I am a web dev, wassup"
+      tags={["frontend", "backend"]}
+    />
+    <Card
+      color="#1E192D"
+      image="education"
+      title="Web Dev"
+      description="I am a web dev, wassup"
+      tags={["frontend", "backend"]}
+    />
+    <Card
+      color="#1E192D"
+      image="education"
+      title="Web Dev"
+      description="I am a web dev, wassup"
+      tags={["frontend", "backend"]}
+    />
+  </div>
+</div>

@@ -2,11 +2,21 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../views/Hero/Hero.astro";
 import About from "../views/About/About.astro";
+import Excel from "../views/Excel/Excel.astro";
+import Projects from "../views/Projects/Projects.astro";
+import Stack from "../views/Stack/Stack.astro";
 ---
 
 <Layout title="Welcome to Astro." description="Home Page">
   <main>
     <Hero />
     <About />
+    <Excel />
+    <div class="sticky top-0">
+      <Projects />
+    </div>
+    <div class="sticky top-0">
+      <Stack />
+    </div>
   </main>
 </Layout>

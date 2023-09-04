@@ -1,0 +1,121 @@
+---
+import TextEffect from "./TextEffect.astro";
+---
+
+<div class="h-[115vh] bg-[#2A233E] pt-24 flex justify-center text-white">
+  <div class="w-full h-full container flex">
+    <div class="w-1/4">
+      <TextEffect />
+    </div>
+    <div class="w-3/4 h-full flex justify-center items-center">
+      <div class="w-full h-full flex justify-center items-center relative">
+        <!-- X-Axis -->
+        <div
+          class="absolute w-px h-[70%] bg-gray-400/40 left-1/2 transform -translate-x-1/2"
+        >
+        </div>
+        <!-- Y-Axis -->
+        <div
+          class="absolute h-px w-[70%] bg-gray-400/40 top-1/2 transform -translate-y-1/2"
+        >
+        </div>
+
+        <!-- Quadrant 1 -->
+        <div
+          class="absolute top-0 right-0 w-1/2 h-1/2 flex items-end justify-start"
+        >
+          <div class="text-center flex flex-col p-12">
+            <div class="flex justify-between w-3/4 items-center">
+              <h1 class="text-4xl">Education</h1>
+              <img
+                src="/assets/about/icons8-education-50.png"
+                alt="coding"
+                class="w-20"
+              />
+            </div>
+            <div class="w-[70%]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
+              consequatur nulla. Quo, quasi dolorum aut vitae consequuntur
+              voluptatibus repellendus. Doloremque, labore cumque. Iusto nulla
+              voluptates, laudantium obcaecati aliquid earum facilis.
+            </div>
+          </div>
+        </div>
+
+        <!-- Quadrant 2 -->
+        <div
+          class="absolute top-0 left-0 w-1/2 h-1/2 flex items-end justify-end"
+        >
+          <div class="text-center flex flex-col justify-end items-end p-12">
+            <div
+              class="flex flex-row-reverse justify-between w-3/4 items-center"
+            >
+              <h1 class="text-4xl">Proficiency</h1>
+              <img
+                src="/assets/about/icons8-coding-50.png"
+                alt="coding"
+                class="w-20"
+              />
+            </div>
+            <div class="w-[70%]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
+              consequatur nulla. Quo, quasi dolorum aut vitae consequuntur
+              voluptatibus repellendus. Doloremque, labore cumque. Iusto nulla
+              voluptates, laudantium obcaecati aliquid earum facilis.
+            </div>
+          </div>
+        </div>
+
+        <!-- Quadrant 3 -->
+        <div
+          class="absolute bottom-0 left-0 w-1/2 h-1/2 flex items-start justify-center"
+        >
+          <div
+            class="text-center flex flex-col-reverse justify-end items-end p-12"
+          >
+            <div
+              class="flex flex-row-reverse justify-between w-3/4 items-center"
+            >
+              <h1 class="text-4xl">Proficiency</h1>
+              <img
+                src="/assets/about/icons8-coding-50.png"
+                alt="coding"
+                class="w-20"
+              />
+            </div>
+            <div class="w-[70%]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
+              consequatur nulla. Quo, quasi dolorum aut vitae consequuntur
+              voluptatibus repellendus. Doloremque, labore cumque. Iusto nulla
+              voluptates, laudantium obcaecati aliquid earum facilis.
+            </div>
+          </div>
+        </div>
+
+        <!-- Quadrant 4 -->
+        <div
+          class="absolute bottom-0 right-0 w-1/2 h-1/2 flex items-start justify-center"
+        >
+          <div
+            class="text-center flex flex-col-reverse justify-start items-start p-12"
+          >
+            <div class="flex flex-row justify-between w-3/4 items-center">
+              <h1 class="text-4xl">Proficiency</h1>
+              <img
+                src="/assets/about/icons8-coding-50.png"
+                alt="coding"
+                class="w-20"
+              />
+            </div>
+            <div class="w-[70%]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
+              consequatur nulla. Quo, quasi dolorum aut vitae consequuntur
+              voluptatibus repellendus. Doloremque, labore cumque. Iusto nulla
+              voluptates, laudantium obcaecati aliquid earum facilis.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
