@@ -1,19 +1,67 @@
 ---
-import Marquee from "../../components/Marquee.astro"
+import Icon from "astro-icon";
+import Marquee from "../../components/Marquee.astro";
 ---
 
-<div class="h-screen bg-accent rounded-t-[100px]">
+<div class="h-screen bg-secondary rounded-t-[100px]">
   <div class="absolute right-0 w-full h-16 bg-[#171424] -z-10"></div>
-  <div class="h-full w-full flex flex-col ">
-    <div
-    class="text-8xl text-[#171424] font-medium h-[38%] flex justify-center items-center relative z-10"
-    >
-    My Tech Stack
-  </div>
-  <div class="w-full">
-    <Marquee />
-  </div>
+  <div class="h-full w-full flex flex-col">
+    <div class="h-1/2 w-full flex flex-col justify-center items-center gap-10">
+      <div
+        class="text-6xl text-white font-medium flex justify-center items-center relative z-10"
+      >
+        What I am familiar with
+      </div>
+      <div class="w-full">
+        <Marquee />
+      </div>
+    </div>
+    <div class="h-1/2 w-full flex flex-col justify-center items-center gap-10">
+      <div
+        class="text-6xl text-white font-medium flex justify-center items-center relative z-10"
+      >
+        What I Actually Prefer
+      </div>
+      <div class="w-full h-[23vh] bg-primary flex justify-center items-center">
+        <div class="marquee">
+          <ul class="marquee-content">
+            <li><Icon name="logos:nextjs-icon" color="white" /></li>
+            <li><Icon name="logos:tailwindcss-icon" color="white" /></li>
+            <li><Icon name="logos:typescript-icon" color="white" /></li>
+            <li><Icon name="logos:prisma" /></li>
+            <li><Icon name="logos:postgresql" color="white" /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
+<style>
+  .marquee {
+    width: 100%;
+    color: #eee;
+    overflow: hidden;
+    position: relative;
+  }
+  .marquee-content {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .marquee-content li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    flex-shrink: 0;
+    width: var(--marquee-element-width);
+    max-height: 100%;
+    font-size: calc(var(--marquee-height) * 3 / 4); /* 5rem; */
+    white-space: nowrap;
+    padding: 18px;
+  }
+</style>

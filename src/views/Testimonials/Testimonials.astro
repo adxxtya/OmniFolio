@@ -1,59 +1,56 @@
-<div class="slider">
-  <input type="radio" name="testimonial" id="t-1" />
-  <input type="radio" name="testimonial" id="t-2" />
-  <input type="radio" name="testimonial" id="t-3" checked />
-  <input type="radio" name="testimonial" id="t-4" />
-  <input type="radio" name="testimonial" id="t-5" />
-  <div class="testimonials">
-    <label class="item" for="t-1">
-      <img src="https://dummyimage.com/150" alt="picture" />
-      <p>
-        "Raw denim you probably haven't heard of them jean short austin.
-        Nesciunt tofu stumptown aliqua, retro synth master cleanse."
-      </p>
-      <h2>- Princy, Web Developer</h2>
-    </label>
-    <label class="item" for="t-2">
-      <img src="https://dummyimage.com/150" alt="picture" />
-      <p>
-        "Raw denim you probably haven't heard of them jean short austin.
-        Nesciunt tofu stumptown aliqua, retro synth master cleanse."
-      </p>
-      <h2>- Princy, Web Developer</h2>
-    </label>
-    <label class="item" for="t-3">
-      <img src="https://dummyimage.com/150" alt="picture" />
-      <p>
-        "Raw denim you probably haven't heard of them jean short austin.
-        Nesciunt tofu stumptown aliqua, retro synth master cleanse."
-      </p>
-      <h2>- Princy, Web Developer</h2>
-    </label>
-    <label class="item" for="t-4">
-      <img src="https://dummyimage.com/150" alt="picture" />
-      <p>
-        "Raw denim you probably haven't heard of them jean short austin.
-        Nesciunt tofu stumptown aliqua, retro synth master cleanse."
-      </p>
-      <h2>- Princy, Web Developer</h2>
-    </label>
-    <label class="item" for="t-5">
-      <img src="https://dummyimage.com/150" alt="picture" />
-      <p>
-        "Raw denim you probably haven't heard of them jean short austin.
-        Nesciunt tofu stumptown aliqua, retro synth master cleanse."
-      </p>
-      <h2>- Princy, Web Developer</h2>
-    </label>
-  </div>
-  <div class="dots">
-    <label for="t-1"></label>
-    <label for="t-2"></label>
-    <label for="t-3"></label>
-    <label for="t-4"></label>
-    <label for="t-5"></label>
-  </div>
+
+<div class="h-screen bg-secondary rounded-t-[100px] rounded-b-[100px]">
+  <div class="absolute bottom-0 w-full h-24 bg-[#171424] -z-10"></div>
+<div class="flex flex-col justify-center items-center h-full w-full gap-16"> 
+  <div
+  class="text-6xl text-white font-medium flex justify-center items-center relative z-10"
+  >
+  Testimonials
 </div>
+  <div class="slider">
+		<!-- <input type="radio" name="testimonial" id="t-1"> -->
+		<input type="radio" name="testimonial" id="t-2">
+		<input type="radio" name="testimonial" id="t-3" checked>
+		<input type="radio" name="testimonial" id="t-4">
+		<!-- <input type="radio" name="testimonial" id="t-5"> -->
+		<div class="testimonials">
+			<!-- <label class="item" for="t-1">
+				<img src="https://dummyimage.com/150" alt="picture">
+				<p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+				<h2>- Princy, Web Developer</h2>
+			</label> -->
+			<label class="item" for="t-2">
+				<img src="https://source.unsplash.com/random/500x500?sig=1" alt="picture">
+				<p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+				<h2>- Princy, Web Developer</h2>
+			</label>
+			<label class="item" for="t-3">
+				<img src="https://source.unsplash.com/random/500x500?sig=2" alt="picture">
+				<p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+				<h2>- Princy, Web Developer</h2>
+			</label>
+			<label class="item" for="t-4">
+				<img src="https://source.unsplash.com/random/500x500?sig=3" alt="picture">
+				<p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+				<h2>- Princy, Web Developer</h2>
+			</label>
+			<!-- <label class="item" for="t-5">
+				<img src="https://dummyimage.com/150" alt="picture">
+				<p>"Raw denim you probably haven't heard of them jean short austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse."</p>
+				<h2>- Princy, Web Developer</h2>
+			</label> -->
+		</div>
+		<div class="dots">
+			<!-- <label for="t-1"></label> -->
+			<label for="t-2"></label>
+			<label for="t-3"></label>
+			<label for="t-4"></label>
+			<!-- <label for="t-5"></label> -->
+		</div>
+	</div>
+</div>
+</div>
+
 
 <style>
   .slider {
@@ -84,19 +81,25 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     user-select: none;
     cursor: pointer;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items:center;
+    gap: 20px;
   }
   .testimonials .item img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
-    border: 13px solid #3b344d;
+    border: 8px solid #FF7E3399;
   }
   .testimonials .item p {
     color: #ddd;
   }
   .testimonials .item h2 {
     font-size: 14px;
+    color: white
   }
   .dots {
     display: flex;
@@ -104,8 +107,8 @@
     align-items: center;
   }
   .dots label {
-    height: 5px;
-    width: 5px;
+    height: 7px;
+    width: 7px;
     border-radius: 50%;
     cursor: pointer;
     background-color: #413b52;
